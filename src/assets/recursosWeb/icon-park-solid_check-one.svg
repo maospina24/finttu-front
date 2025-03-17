@@ -1,0 +1,22 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-park-solid:check-one" clip-path="url(#clip0_2_420)">
+<g id="Mask group">
+<mask id="mask0_2_420" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="34" height="34">
+<g id="Group">
+<g id="Group_2">
+<path id="Vector" d="M17.0001 31.1666C18.8608 31.1689 20.7036 30.8035 22.4227 30.0914C24.1418 29.3793 25.7032 28.3346 27.0173 27.0172C28.3347 25.7031 29.3794 24.1417 30.0915 22.4226C30.8036 20.7035 31.169 18.8607 31.1667 16.9999C31.169 15.1392 30.8036 13.2964 30.0915 11.5773C29.3794 9.8582 28.3347 8.29676 27.0173 6.98268C25.7032 5.66529 24.1418 4.62054 22.4227 3.90845C20.7036 3.19636 18.8608 2.83097 17.0001 2.83326C15.1393 2.83097 13.2965 3.19636 11.5774 3.90845C9.85832 4.62054 8.29688 5.66529 6.9828 6.98268C5.66542 8.29676 4.62066 9.8582 3.90857 11.5773C3.19648 13.2964 2.83109 15.1392 2.83338 16.9999C2.83109 18.8607 3.19648 20.7035 3.90857 22.4226C4.62066 24.1417 5.66542 25.7031 6.9828 27.0172C8.29688 28.3346 9.85832 29.3793 11.5774 30.0914C13.2965 30.8035 15.1393 31.1689 17.0001 31.1666Z" fill="white" stroke="white" stroke-width="4" stroke-linejoin="round"/>
+<path id="Vector_2" d="M11.3334 17L15.5834 21.25L24.0834 12.75" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</mask>
+<g mask="url(#mask0_2_420)">
+<path id="Vector_3" d="M0 0H34V34H0V0Z" fill="#5C0C87"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_2_420">
+<rect width="34" height="34" fill="white"/>
+</clipPath>
+</defs>
+</svg>

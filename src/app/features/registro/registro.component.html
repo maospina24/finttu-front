@@ -1,0 +1,226 @@
+
+<app-header></app-header>
+<div class="registro page-transition">
+  <div class="frame-wrapper">
+    <div class="frame">
+      <div class="div-wrapper">
+        <div class="frame-2">
+          <div class="frame-3">
+            <div class="frame-4">
+              <div class="text">
+                <p class="p">Regístrate y obtén tu primer diagnóstico</p>
+                <p class="text-wrapper-2">Comienza por organizar tus finanzas para lograr todas tus metas</p>
+              </div>
+              <div class="form">
+                <div class="google-button" style="cursor: pointer;">
+                  <div class="sign-in-with-google">Iniciar sesión con Google</div>
+                  <img class="iconfinder-google" src="assets/registro/google.png" />
+                </div>
+                <div class="create-account-wrapper" style="cursor: pointer;" (click)="validarYAbrirModal(modalCrearContrasena)"><div class="create-account">Crear contraseña</div></div>
+                <div class="text-wrapper-3">¿Olvidaste tu contraseña?</div>
+
+                <div [formGroup]="registroForm">
+                  <div class="entry-field-2">
+                    <div class="first-name">Tipo Documento</div>
+                    <select style="font-size: 12px;" type="text" class="form-control group" formControlName="tipoDocumento">
+                      <option>Seleccione</option>
+                      <option value="CC">Cédula Ciudadania</option>
+                      <option value="CE">Cédula Extranjeria</option>
+                    </select>
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('tipoDocumento')?.invalid && registroForm.get('tipoDocumento')?.touched" class="text-danger">
+                      El campo es obligatorio.
+                    </div>
+                  </div>
+                  <div class="entry-field-3">
+                    <div class="first-name">Primer Nombre</div>
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerNombre">
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerNombre')?.invalid && registroForm.get('primerNombre')?.touched" class="text-danger">
+                      El campo es obligatorio.
+                    </div>
+                  </div>
+                  <div class="entry-field-4">
+                    <div class="first-name">Correo Electrónico</div>
+                    <input type="email" class="form-control group" style="font-size: 12px;" formControlName="correo">
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched" class="text-danger">
+                      El formato no es valido.
+                    </div>
+                  </div>
+                  <div class="entry-field-5">
+                    <div class="first-name">Celular</div>
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="celular">
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('celular')?.invalid && registroForm.get('celular')?.touched" class="text-danger">
+                      El formato no es valido.
+                    </div>
+                  </div>
+                  <div class="entry-field-6">
+                    <div class="first-name">Primer Apellido</div>
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerApellido">
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerApellido')?.invalid && registroForm.get('primerApellido')?.touched" class="text-danger">
+                      El campo es obligatorio.
+                    </div>
+                  </div>
+                  <div class="entry-field-7">
+                    <div class="first-name">Número de Documento</div>
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="numeroDocumento">
+                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('numeroDocumento')?.invalid && registroForm.get('numeroDocumento')?.touched" class="text-danger">
+                      El campo es obligatorio.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- <div class="frame-5">
+                <div class="terms-and-privacy">
+                  <input type="checkbox" class="rectangle">
+                  <p class="text-wrapper-4">Acepto todos los Términos y la política de privacidad</p>
+                </div>
+                <div class="terms-and-privacy">
+                  <input type="checkbox" class="rectangle">
+                  <p class="text-wrapper-4">
+                    Acepto todos los términos y condiciones para la revisión de mis datos financieros y mi historial
+                    de crédito.
+                  </p>
+                </div>
+                <div class="terms-and-privacy">
+                  <input type="checkbox" class="rectangle">
+                  <p class="text-wrapper-4">Acepto el tratamiento de datos personales</p>
+                </div>
+              </div> -->
+            </div>
+            <p (click)="viewLogin()"class="ya-tienes-una-cuenta">
+              <span class="span">Ya tienes una cuenta?</span> <span class="text-wrapper-5"> Iniciar sesión</span>
+            </p>
+          </div>
+          <div class="overlap-group">
+            <div class="rectangle-2"></div>
+            <img class="image-benefits" src="assets/registro/registro.png" />
+            <img class="finttu-image" src="assets/registro/finttu-registro.png" />
+          </div>
+          <p class="finttu-convierte-tus">Finttu convierte tus finanzas<br />en tu mejor aliado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<ng-template #modalCrearContrasena let-modal>
+  <div class="modal-body" style="padding: 40px;" [formGroup]="registerForm">
+    <button type="button" class="close-button" (click)="modal.dismiss('closed')">
+      ✖
+    </button>
+    <div *ngIf="!registroExitoso">
+      <p class="texto-modal">Crear contraseña</p>
+      <p class="texto-modal-interno">Una contraseña segura debe incluir al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.</p>
+      <p class="texto-modal2">Tu contraseña debe tener</p>
+
+      <div class="password-requirements texto-modal-interno">
+        <p [ngClass]="{'text-success': passwordValid.length, 'text-danger': !passwordValid.length}">
+          <span style="margin-right: 10px;">{{ passwordValid.length ? '✔' : '✖' }}</span> Mínimo 8 caracteres y máximo 15.
+        </p>
+        <p [ngClass]="{'text-success': passwordValid.upperLower, 'text-danger': !passwordValid.upperLower}">
+          <span style="margin-right: 10px;">{{ passwordValid.upperLower ? '✔' : '✖' }}</span> Combinación entre MAYÚSCULAS y minúsculas.
+        </p>
+        <p [ngClass]="{'text-success': passwordValid.number, 'text-danger': !passwordValid.number}">
+          <span style="margin-right: 10px;">{{ passwordValid.number ? '✔' : '✖' }}</span> Al menos un número.
+        </p>
+        <p [ngClass]="{'text-success': passwordValid.special, 'text-danger': !passwordValid.special}">
+          <span style="margin-right: 10px;">{{ passwordValid.special ? '✔' : '✖' }}</span> Al menos un carácter especial.
+        </p>
+      </div>
+
+      <div class="password-fields">
+        <div class="input-group mb-3">
+          <input [type]="showPassword ? 'text' : 'password'" class="form-control group"
+            style="font-size: 12px;" placeholder="Contraseña *" formControlName="password">
+          <span class="input-group-text">
+            <i style="color: #5c0c87;" class="fa" [ngClass]="{'fa-eye-slash': showPassword, 'fa-eye': !showPassword}"
+              (click)="togglePasswordVisibility()"></i>
+          </span>
+        </div>
+
+        <div class="input-group mb-3">
+          <input [type]="showConfirmPassword ? 'text' : 'password'" class="form-control group"
+            style="font-size: 12px;" placeholder="Confirmar contraseña *" formControlName="confirmPassword">
+          <span class="input-group-text">
+            <i style="color: #5c0c87;" class="fa" [ngClass]="{'fa-eye-slash': showConfirmPassword, 'fa-eye': !showConfirmPassword}"
+              (click)="toggleConfirmPasswordVisibility()"></i>
+          </span>
+        </div>
+        <div ngClass="texto-modal-interno" *ngIf="registerForm.hasError('passwordsMismatch') && registerForm.get('confirmPassword')?.touched" class="text-danger">
+          Las contraseñas no coinciden.
+        </div>
+        <br>
+      </div>
+
+      <div class="terms texto-modal-interno">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="terminos" formControlName="terminos">
+          <label class="form-check-label" for="terminos">
+            He leído y acepto los Términos y Condiciones.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="infoExperian" formControlName="infoExperian">
+          <label class="form-check-label" for="infoExperian">
+            Autorizo a Finttu para enviarme información comercial.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="tratamientoDatos" formControlName="tratamientoDatos">
+          <label class="form-check-label" for="tratamientoDatos">
+            Autorizo el tratamiento de mis datos personales.
+          </label>
+        </div>
+      </div>
+      <div style="margin-top: 8px; margin-bottom: 8px;" class="texto-modal-interno text-danger"
+          *ngIf="(registerForm.get('terminos')?.invalid && registerForm.get('terminos')?.touched) || registerForm.invalid">
+        Debes aceptar los términos y condiciones.
+      </div>
+
+      <div class="texto-modal-interno text-danger"
+          *ngIf="(registerForm.get('tratamientoDatos')?.invalid && registerForm.get('tratamientoDatos')?.touched) || registerForm.invalid">
+        Debes aceptar el tratamiento de datos.
+      </div>
+
+
+      <br><br><br>
+    </div>
+    <div *ngIf="!registroExitoso" class="create-account-wrapper" style="cursor: pointer;" (click)="registrar()" >
+      <div class="create-account" [class.disabled]="!registerForm.valid"[disabled]="!registerForm.valid">
+        Registrarme
+      </div>
+    </div>
+
+    <!-- Sección de Validación OTP -->
+    <div class="page-transition" *ngIf="registroExitoso">
+      <p class="texto-modal">Validación de código</p>
+      <p class="texto-modal-interno">Por favor ingresa el código de seis (6) dígitos que enviamos a tu correo electrónico ({{ this.registroForm.get('correo')?.value }}).</p>
+      <p class="texto-modal-interno">Si no lo encuentras en la bandeja de entrada, revisa la carpeta de spam o no deseados.</p>
+
+      <div class="otp-container">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 0)">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 1)">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 2)">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 3)">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 4)">
+        <input type="text" maxlength="1" class="otp-input" (input)="focusNext($event, 5)">
+      </div>
+      <div class="resend-container">
+        <button class="btn btn-link" (click)="reenviarCodigo()" [disabled]="isResendDisabled">
+          Reenviar código <span *ngIf="isResendDisabled">({{ timer }}s)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="loading-content">
+    <img src="assets/animacion-final-finttu-con-sonido.gif" alt="Cargando..." class="loading-gif">
+    <p class="loading-text">Validando información por favor, espere...</p>
+  </div>
+</div>
+<app-footer></app-footer>
+
+<!-- (click)="openModal(modalCrearContrasena)" -->

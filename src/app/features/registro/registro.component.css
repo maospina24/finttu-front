@@ -1,0 +1,120 @@
+.page-transition {
+  animation: bounceIn 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.terms {
+  background: #e2d2ea;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid #5c0c87; /* Color del borde */
+  border-radius: 5px;
+  color: #5c0c87; /* Color del texto */
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Cuando el input esté enfocado */
+.otp-input:focus {
+  border-color: #8a2be2; /* Un tono más brillante al enfocar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(140, 0, 255, 0.5);
+  color: #8a2be2; /* Color del texto al enfocar */
+}
+
+.resend-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn-link {
+  color: #5c0c87;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-link:disabled {
+  color: grey;
+  cursor: not-allowed;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #5c0c87;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #8a2be2;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(185, 182, 182, 0.5); /* Oscurece el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté sobre todo */
+}
+
+.loading-gif {
+  width: 230px; /* Ajusta el tamaño según necesites */
+  height: 230px;
+  border-radius: 50%; /* Hace el GIF redondo */
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  border: 2px solid #663382; /* Opcional: Agregar un borde blanco */
+  opacity: 0.9;
+}
+
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espacio entre el GIF y el texto */
+}
+
+.loading-text {
+  color: #663382;
+  font-size: 18px;
+  font-weight: bold;
+}
+
