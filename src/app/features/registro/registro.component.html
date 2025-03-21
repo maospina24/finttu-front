@@ -22,7 +22,7 @@
                 <div [formGroup]="registroForm">
                   <div class="entry-field-2">
                     <div class="first-name">Tipo Documento</div>
-                    <select style="font-size: 12px;" type="text" class="form-control group" formControlName="tipoDocumento">
+                    <select style="font-size: 12px;" type="text" class="form-control group" formControlName="tipoDocumento" tabindex="1">
                       <option>Seleccione</option>
                       <option value="CC">Cédula Ciudadania</option>
                       <option value="CE">Cédula Extranjeria</option>
@@ -33,37 +33,46 @@
                   </div>
                   <div class="entry-field-3">
                     <div class="first-name">Primer Nombre</div>
-                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerNombre">
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerNombre" tabindex="3">
                     <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerNombre')?.invalid && registroForm.get('primerNombre')?.touched" class="text-danger">
                       El campo es obligatorio.
                     </div>
                   </div>
                   <div class="entry-field-4">
                     <div class="first-name">Correo Electrónico</div>
-                    <input type="email" class="form-control group" style="font-size: 12px;" formControlName="correo">
-                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched" class="text-danger">
+                    <input type="email" class="form-control group" style="font-size: 12px;" formControlName="correo" tabindex="5">
+                    <!-- <div ngClass="texto-modal-interno" *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched" class="text-danger">
                       El formato no es valido.
+                    </div> -->
+                    <div type="email" class="form-control group" style="font-size: 12px;" *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid" class="text-danger">
+                      <small *ngIf="registroForm.get('correo')?.errors?.['required']">El campo es obligatorio.</small>
+                      <small *ngIf="registroForm.get('correo')?.errors?.['email']">El formato del correo no es válido.</small>
                     </div>
                   </div>
                   <div class="entry-field-5">
                     <div class="first-name">Celular</div>
-                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="celular">
-                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('celular')?.invalid && registroForm.get('celular')?.touched" class="text-danger">
-                      El formato no es valido.
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="celular" tabindex="6">
+                    <div ngClass="texto-modal-interno" style="font-size: 12px;" *ngIf="registroForm.get('celular')?.touched && registroForm.get('celular')?.invalid" class="text-danger">
+                      <small *ngIf="registroForm.get('celular')?.errors?.['required']">El campo es obligatorio.</small>
+                      <small *ngIf="registroForm.get('celular')?.errors?.['pattern']">Solo se permiten números.</small>
                     </div>
                   </div>
                   <div class="entry-field-6">
                     <div class="first-name">Primer Apellido</div>
-                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerApellido">
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerApellido" tabindex="4">
                     <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerApellido')?.invalid && registroForm.get('primerApellido')?.touched" class="text-danger">
                       El campo es obligatorio.
                     </div>
                   </div>
                   <div class="entry-field-7">
                     <div class="first-name">Número de Documento</div>
-                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="numeroDocumento">
-                    <div ngClass="texto-modal-interno" *ngIf="registroForm.get('numeroDocumento')?.invalid && registroForm.get('numeroDocumento')?.touched" class="text-danger">
+                    <input type="text" class="form-control group" style="font-size: 12px;" formControlName="numeroDocumento" tabindex="2">
+                    <!-- <div ngClass="texto-modal-interno" *ngIf="registroForm.get('numeroDocumento')?.invalid && registroForm.get('numeroDocumento')?.touched" class="text-danger">
                       El campo es obligatorio.
+                    </div> -->
+                    <div ngClass="texto-modal-interno" style="font-size: 12px;" *ngIf="registroForm.get('numeroDocumento')?.touched && registroForm.get('numeroDocumento')?.invalid" class="text-danger">
+                      <small *ngIf="registroForm.get('numeroDocumento')?.errors?.['required']">El campo es obligatorio.</small>
+                      <small *ngIf="registroForm.get('numeroDocumento')?.errors?.['pattern']">Solo se permiten números.</small>
                     </div>
                   </div>
                 </div>

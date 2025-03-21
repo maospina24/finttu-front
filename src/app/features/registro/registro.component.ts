@@ -53,7 +53,7 @@ export class RegistroComponent implements OnInit {
       tipoDocumento: ['', Validators.required],
       primerNombre: ['', [Validators.required, Validators.minLength(2)]],
       correo: ['', [Validators.required, Validators.email]],
-      celular: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      celular: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
       primerApellido: ['', Validators.required],
       numeroDocumento: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     });

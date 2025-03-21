@@ -69,7 +69,7 @@
                 <div class="frame-8">
                   <div class="terms-and-privacy">
                     <input type="checkbox" class="rectangle" formControlName="acceptTerms" id="terms" />
-                    <div class="text-wrapper-4">Acepto todos los <span style="cursor: pointer;" class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#termsModal">Terminos</span> y la política de privacidad</div>
+                    <div class="text-wrapper-4">Acepto todos los <span style="cursor: pointer;" class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#termsModal">Terminos</span> y la <span style="cursor: pointer;" class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</span></div>
                     <div ngClass="texto-modal-interno" *ngIf="loginForm.get('acceptTerms')?.invalid && loginForm.get('acceptTerms')?.touched" class="text-danger">
                       Debes aceptar los términos y condiciones.
                     </div>
@@ -100,61 +100,14 @@
 
 <!-- Modal de Términos y Condiciones -->
 <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="termsModalLabel">Términos y Condiciones</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body" style='font-family: "SF Pro Display-Regular", Helvetica;font-size: 12px;'>
-        <p>Los presentes Términos y Condiciones (en adelante, los "Términos") regulan el acceso, uso y
-          funcionamiento de la plataforma Finttu (en adelante, "la Plataforma"), de titularidad de
-          FINNOVATECH S.A.S., identificada con NIT 901891247, domiciliada en Manizales, Colombia.</p>
-
-
-        <p>Al acceder y utilizar la Plataforma, el usuario acepta plenamente y sin reservas los presentes
-          Términos y Condiciones, así como la Política de Privacidad, Política de Tratamiento de
-          Datos y Política de Cookies, que forman parte integral del presente documento.</p>
-
-        <h6>1. DEFINICIONES</h6>
-        <p><strong>Plataforma:</strong> Sitio web y/o aplicación de Finttu...</p>
-        <p><strong>Usuario:</strong> Persona natural que accede, navega o utiliza los servicios de la Plataforma...</p>
-
-        <h6>2. CONDICIONES DE USO DE LA PLATAFORMA</h6>
-        <h6>2.1. Registro y Creación de Cuenta</h6>
-        <p>Para acceder a los servicios de Finttu, el usuario deberá completar el registro...</p>
-
-        <h6>2.2. Uso Adecuado de la Plataforma</h6>
-        <p>El usuario se compromete a usar la Plataforma conforme a la ley...</p>
-
-        <h6>3. SERVICIOS OFRECIDOS</h6>
-        <p>La Plataforma ofrece diagnóstico financiero, recomendaciones de crédito y optimización crediticia...</p>
-
-        <h6>4. RESPONSABILIDADES DEL USUARIO</h6>
-        <p>El usuario acepta que las recomendaciones no constituyen asesoría formal...</p>
-
-        <h6>5. POLÍTICA DE CANCELACIÓN DE SERVICIOS</h6>
-        <p>El usuario puede solicitar la cancelación de su cuenta enviando un correo a gerencia&#64;finttu.com...</p>
-
-        <h6>6. PROPIEDAD INTELECTUAL</h6>
-        <p>Todos los contenidos de la Plataforma son propiedad de Finttu...</p>
-
-        <h6>7. SEGURIDAD Y PRIVACIDAD</h6>
-        <p>Finttu implementa medidas de seguridad adecuadas...</p>
-
-        <h6>8. MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</h6>
-        <p>Finttu se reserva el derecho de modificar estos Términos en cualquier momento...</p>
-
-        <h6>9. LEGISLACIÓN Y JURISDICCIÓN APLICABLE</h6>
-        <p>Estos Términos y Condiciones se rigen por la legislación colombiana...</p>
-
-        <h6>10. CONTACTO Y SOPORTE</h6>
-        <p>Para consultas, los usuarios pueden comunicarse a:</p>
-        <ul>
-          <li><strong>Correo:</strong> gerencia&#64;finttu.com</li>
-          <li><strong>Teléfono:</strong> 3205818250</li>
-          <li><strong>Domicilio:</strong> Manizales, Colombia</li>
-        </ul>
+      <div class="modal-body">
+        <iframe src="assets/documentacion/terminos_condiciones.pdf#toolbar=0" width="100%" height="500px"></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -165,55 +118,14 @@
 
 <!-- Modal de Política de Privacidad -->
 <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="privacyModalLabel" style='font-family: "SF Pro Display-Regular", Helvetica;'>Política de Privacidad</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="modal-body" style='font-family: "SF Pro Display-Regular", Helvetica;'>
-        <p><strong>Fecha de última actualización:</strong> 01-03-2025</p>
-        <p>Los presentes Términos y Condiciones regulan el acceso, uso y funcionamiento de la plataforma Finttu...</p>
-
-        <h5>1. DEFINICIONES</h5>
-        <p><strong>Plataforma:</strong> Sitio web y/o aplicación de Finttu...</p>
-        <p><strong>Usuario:</strong> Persona natural que accede, navega o utiliza los servicios de la Plataforma...</p>
-
-        <h5>2. CONDICIONES DE USO DE LA PLATAFORMA</h5>
-        <h6>2.1. Registro y Creación de Cuenta</h6>
-        <p>Para acceder a los servicios de Finttu, el usuario deberá completar el registro...</p>
-
-        <h6>2.2. Uso Adecuado de la Plataforma</h6>
-        <p>El usuario se compromete a usar la Plataforma conforme a la ley...</p>
-
-        <h5>3. SERVICIOS OFRECIDOS</h5>
-        <p>La Plataforma ofrece diagnóstico financiero, recomendaciones de crédito y optimización crediticia...</p>
-
-        <h5>4. RESPONSABILIDADES DEL USUARIO</h5>
-        <p>El usuario acepta que las recomendaciones no constituyen asesoría formal...</p>
-
-        <h5>5. POLÍTICA DE CANCELACIÓN DE SERVICIOS</h5>
-        <p>El usuario puede solicitar la cancelación de su cuenta enviando un correo a gerencia&#64;finttu.com...</p>
-
-        <h5>6. PROPIEDAD INTELECTUAL</h5>
-        <p>Todos los contenidos de la Plataforma son propiedad de Finttu...</p>
-
-        <h5>7. SEGURIDAD Y PRIVACIDAD</h5>
-        <p>Finttu implementa medidas de seguridad adecuadas...</p>
-
-        <h5>8. MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</h5>
-        <p>Finttu se reserva el derecho de modificar estos Términos en cualquier momento...</p>
-
-        <h5>9. LEGISLACIÓN Y JURISDICCIÓN APLICABLE</h5>
-        <p>Estos Términos y Condiciones se rigen por la legislación colombiana...</p>
-
-        <h5>10. CONTACTO Y SOPORTE</h5>
-        <p>Para consultas, los usuarios pueden comunicarse a:</p>
-        <ul>
-          <li><strong>Correo:</strong> gerencia&#64;finttu.com</li>
-          <li><strong>Teléfono:</strong> 3205818250</li>
-          <li><strong>Domicilio:</strong> Manizales, Colombia</li>
-        </ul>
+      <div class="modal-body">
+        <iframe src="assets/documentacion/politica_privacidad.pdf#toolbar=0" width="100%" height="500px"></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
