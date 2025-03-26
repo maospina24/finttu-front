@@ -66,6 +66,14 @@ export class RegistroComponent implements OnInit {
     this.otp = new Array(6).fill("");
   }
 
+  viewRegistro() {
+    this.router.navigate(['/registro']);
+  }
+
+  home() {
+    this.router.navigate(['/home']);
+  }
+
   registro() {
     const usuarioModel = {
       "tipo_documento": this.registroForm.get('tipoDocumento')?.value || "",
@@ -137,6 +145,7 @@ export class RegistroComponent implements OnInit {
 
   validarYAbrirModal(content: any): void {
     this.registroForm.markAllAsTouched();
+    this.openModal(content);
     if (this.registroForm.valid) {
       this.openModal(content);
     } else {

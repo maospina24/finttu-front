@@ -1,7 +1,91 @@
+<table style="width: 100%;" class="movil">
+  <tr>
+    <td>
+      <div class="header">
+        <img (click)="home()" class="png-sin-fondo-1" alt="" src="assets/recursosWeb/PNG sin fondo 1.png">
+        <div class="user-actions">
+            <div class="user-actions1">
+                <div class="login-button" style="cursor: pointer;" (click)="viewLogin()">
+                    <div class="login-text">Ingresar</div>
+                </div>
+                <div class="register-button" style="cursor: pointer;" (click)="viewRegistro()">
+                  <div class="login-text">Registrarse</div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="contenedor-login">
+        <form [formGroup]="registroForm" class="page-transition">
+          <p class="seccion-login-1">Regístrate y obtén tu primer diagnóstico</p>
+          <p class="text-wrapper-2">Comienza por organizar tus finanzas para lograr todas tus meta</p>
+          <div class="entry-field-2">
+            <div class="first-name">Tipo Documento</div>
+            <select style="font-size: 12px;" type="text" class="form-control group" formControlName="tipoDocumento" tabindex="1">
+              <option>Seleccione</option>
+              <option value="CC">Cédula Ciudadania</option>
+              <option value="CE">Cédula Extranjeria</option>
+            </select>
+            <div ngClass="texto-modal-interno" *ngIf="registroForm.get('tipoDocumento')?.invalid && registroForm.get('tipoDocumento')?.touched" class="text-danger">
+              El campo es obligatorio.
+            </div>
+          </div>
+          <div class="entry-field-7">
+            <div class="first-name">Número de Documento</div>
+            <input type="text" class="form-control group" style="font-size: 12px;" formControlName="numeroDocumento" tabindex="2">
+            <div ngClass="texto-modal-interno" style="font-size: 12px;" *ngIf="registroForm.get('numeroDocumento')?.touched && registroForm.get('numeroDocumento')?.invalid" class="text-danger">
+              <small *ngIf="registroForm.get('numeroDocumento')?.errors?.['required']">El campo es obligatorio.</small>
+              <small *ngIf="registroForm.get('numeroDocumento')?.errors?.['pattern']">Solo se permiten números.</small>
+            </div>
+          </div>
+          <div class="entry-field-3">
+            <div class="first-name">Primer Nombre</div>
+            <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerNombre" tabindex="3">
+            <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerNombre')?.invalid && registroForm.get('primerNombre')?.touched" class="text-danger">
+              El campo es obligatorio.
+            </div>
+          </div>
+          <div class="entry-field-6">
+            <div class="first-name">Primer Apellido</div>
+            <input type="text" class="form-control group" style="font-size: 12px;" formControlName="primerApellido" tabindex="4">
+            <div ngClass="texto-modal-interno" *ngIf="registroForm.get('primerApellido')?.invalid && registroForm.get('primerApellido')?.touched" class="text-danger">
+              El campo es obligatorio.
+            </div>
+          </div>
+          <div class="entry-field-4">
+            <div class="first-name">Correo Electrónico</div>
+            <input type="email" class="form-control group" style="font-size: 12px;" formControlName="correo" tabindex="5">
+            <div ngClass="texto-modal-interno" type="email" class="form-control group" style="font-size: 12px;" *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid" class="text-danger">
+              <small *ngIf="registroForm.get('correo')?.errors?.['required']">El campo es obligatorio.</small>
+              <small *ngIf="registroForm.get('correo')?.errors?.['email']">El formato del correo no es válido.</small>
+            </div>
+          </div>
+          <div class="entry-field-5">
+            <div class="first-name">Celular</div>
+            <input type="text" class="form-control group" style="font-size: 12px;" formControlName="celular" tabindex="6">
+            <div ngClass="texto-modal-interno" style="font-size: 12px;" *ngIf="registroForm.get('celular')?.touched && registroForm.get('celular')?.invalid" class="text-danger">
+              <small *ngIf="registroForm.get('celular')?.errors?.['required']">El campo es obligatorio.</small>
+              <small *ngIf="registroForm.get('celular')?.errors?.['pattern']">Solo se permiten números.</small>
+            </div>
+          </div>
+        </form>
+        <div class="text-wrapper-3">¿Olvidaste tu contraseña?</div>
+        <div class="create-account-wrapper" style="cursor: pointer;" (click)="validarYAbrirModal(modalCrearContrasena)"><div class="create-account">Crear contraseña</div></div>
+        <p (click)="viewLogin()"class="ya-tienes-una-cuenta">
+          <span class="span">Ya tienes una cuenta?</span> <span class="text-wrapper-5"> Iniciar sesión</span>
+        </p>
+      </div>
+    </td>
+  </tr>
+</table>
 
-<app-header></app-header>
+
+<app-header class="web"></app-header>
 <div class="registro page-transition">
-  <div class="frame-wrapper">
+  <div class="frame-wrapper web">
     <div class="frame">
       <div class="div-wrapper">
         <div class="frame-2">
@@ -230,6 +314,6 @@
     <p class="loading-text">Validando información por favor, espere...</p>
   </div>
 </div>
-<app-footer></app-footer>
+<app-footer class="web"></app-footer>
 
 <!-- (click)="openModal(modalCrearContrasena)" -->

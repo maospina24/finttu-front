@@ -1,6 +1,115 @@
-<app-header></app-header>
+<table style="width: 100%;" class="movil">
+  <tr>
+    <td>
+      <div class="header">
+        <img (click)="home()" class="png-sin-fondo-1" alt="" src="assets/recursosWeb/PNG sin fondo 1.png">
+        <div class="user-actions">
+            <div class="user-actions1">
+                <div class="login-button" style="cursor: pointer;" (click)="viewLogin()">
+                    <div class="login-text">Ingresar</div>
+                </div>
+                <div class="register-button" style="cursor: pointer;" (click)="viewRegistro()">
+                  <div class="login-text">Registrarse</div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="contenedor-login">
+        <form [formGroup]="loginForm" class="page-transition">
+          <p class="seccion-login-1">Empieza a organizar tus finanzas hoy<br> ¡Inicia sesión y toma el control de tus metas!</p>
+          <br>
+          <div class="frame-7">
+            <div class="entry-field-wrapper">
+              <div class="entry-field">
+                <div class="entry-field-2">
+                  <div class="first-name">Correo electrónico</div>
+                  <input
+                    style="font-size: 14px;"
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    class="form-control group"
+                  />
+                  <div ngClass="texto-modal-interno" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || submitted)" class="text-danger">
+                    <span *ngIf="loginForm.get('email')?.errors?.required">El campo es obligatorio.</span>
+                    <span *ngIf="loginForm.get('email')?.errors?.email">El formato del correo es inválido.</span>
+                  </div>
+                </div>
+                <div class="entry-field-2">
+                  <div class="first-name">Contraseña</div>
+                  <table>
+                    <tr>
+                      <td>
+                        <input
+                          id="password"
+                          [type]="showConfirmPassword ? 'text' : 'password'"
+                          formControlName="password"
+                          class="form-control group-password"
+                          style="font-size: 14px;"
+                        />
+                      </td>
+                      <td>
+                        <span class="input-group-text" (click)="toggleConfirmPasswordVisibility()">
+                          <i style="color: #5c0c87;cursor: pointer;" class="fa fa-eye" [ngClass]="{'fa-eye-slash': showConfirmPassword, 'fa-eye': !showConfirmPassword}"></i>
+                        </span>
+                      </td>
+                    </tr>
+                  </table>
+                  <div ngClass="texto-modal-interno" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || submitted)" class="text-danger">
+                    <span *ngIf="loginForm.get('password')?.errors?.required">El campo es obligatorio.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-wrapper-3">¿Olvidaste tu contraseña?</div>
+            <div class="frame-8">
+              <div class="terms-and-privacy">
+                <table style="width: 100%;">
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="rectangle" formControlName="acceptTerms" id="terms" />
+                    </td>
+                    <td>
+                      <div class="text-wrapper-4">Acepto todos los <span style="cursor: pointer;" class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#termsModal">Terminos</span> y la <span style="cursor: pointer;" class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</span></div>
+                      <div ngClass="texto-modal-interno" *ngIf="loginForm.get('acceptTerms')?.invalid && loginForm.get('acceptTerms')?.touched" class="text-danger">
+                        Debes aceptar los términos y condiciones.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div (click)="validarForm()" class="create-account-wrapper" style="cursor: pointer;"><div class="create-account">Iniciar sesión</div></div>
+              <div class="remember-me">
+                <table style="width: 100%;">
+                  <tr>
+                    <td>
+                      <input type="checkbox" [checked]="this.loginForm.get('rememberPass')?.value" class="rectangle" id="recordar" formControlName="rememberPass"/>
+                    </td>
+                    <td>
+                      <div class="text-wrapper-4">Recuérdame</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <p class="no-tienes-una-cuenta">
+              <span class="span">¿No tienes una cuenta?</span> <span style="cursor: pointer;" (click)="viewRegister()" class="text-wrapper-5"> Registrarse</span>
+            </p>
+          </div>
+        </form>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<app-header class="web"></app-header>
+
 <div class="inicio page-transition">
-  <div class="frame-wrapper">
+  <div class="frame-wrapper web">
     <div class="frame">
       <div class="div-wrapper">
         <div class="frame-2">
@@ -18,13 +127,12 @@
                 <div class="frame-6">
                   <div class="text">
                     <p class="p">Empieza a organizar tus finanzas hoy<br> ¡Inicia sesión y toma el control de tus metas!</p>
-                    <p class="text-wrapper-2">Comienza por organizar tus finanzas para lograr todas tus metas</p>
                   </div>
                   <div class="frame-7">
                     <div class="entry-field-wrapper">
                       <div class="entry-field">
                         <div class="entry-field-2">
-                          <div class="first-name">Correo electrónico o número de teléfono</div>
+                          <div class="first-name">Correo</div>
                           <input
                             style="font-size: 14px;"
                             id="email"
@@ -52,7 +160,7 @@
                               </td>
                               <td>
                                 <span class="input-group-text" (click)="toggleConfirmPasswordVisibility()">
-                                  <i style="color: #5c0c87;cursor: pointer;" class="fa" [ngClass]="{'fa-eye-slash': showConfirmPassword, 'fa-eye': !showConfirmPassword}"></i>
+                                  <i style="color: #5c0c87;cursor: pointer;" class="fa fa fa-eye" [ngClass]="{'fa-eye-slash': showConfirmPassword, 'fa-eye': !showConfirmPassword}"></i>
                                 </span>
                               </td>
                             </tr>
@@ -91,7 +199,7 @@
             <img class="image-benefits" src="assets/registro/Image-benefits.png" />
             <img class="finttu-image" src="assets/registro/finttu-registro.png" />
           </div>
-          <p class="finttu-te-devuelve">Finttu te devuelve el control<br />de tus finanzas</p>
+          <p class="finttu-te-devuelve">Finttu te devuelve el contro<br />de tus finanzas</p>
         </div>
       </div>
     </div>
@@ -134,4 +242,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer class="web"></app-footer>

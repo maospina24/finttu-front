@@ -2,6 +2,210 @@
   animation: bounceIn 1s ease-in-out;
 }
 
+@media (min-width: 1400px) {
+  .movil{
+    display: none;
+  }
+
+  .web{
+    display: block !important;
+  }
+}
+
+/* Móviles (320px - 576px) */
+@media (max-width: 1400px) {
+
+  .page-transition {
+    animation: bounceIn 1s ease-in-out;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  .movil{
+    display: block;
+  }
+
+  .web{
+    display: none;
+  }
+
+  .responsive {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .png-sin-fondo-1 {
+    width: 90px;
+    position: relative;
+    height: 39px;
+    object-fit: cover;
+    margin-right: 5px;
+  }
+
+  .login-button {
+    width: 110px;
+    border-radius: var(--br-xs);
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    font-size: 13px;
+  }
+
+  .register-button {
+    width: 110px;
+    border-radius: var(--br-xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-indigo-100);
+    box-sizing: border-box;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    color: var(--color-indigo-100);
+    font-size: 13px;
+  }
+
+  .seccion-login-1{
+    margin-top: -.71px;
+    font-family: SF Pro Display-Bold, Helvetica;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -.4px;
+    line-height: 27.7px;
+  }
+
+  .text-wrapper-2 {
+    position: relative;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--body-text);
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: -0.20px;
+    line-height: 13.8px;
+    white-space: nowrap;
+    margin-bottom: 40px;
+  }
+
+  .contenedor-login {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 90px; /* Mantiene la posición vertical fija */
+    left: 50%;
+    transform: translateX(-50%); /* Centra solo horizontalmente */
+    padding: 30px;
+  }
+
+  .ya-tienes-una-cuenta {
+    position: relative;
+    align-self: stretch;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 9.9px;
+    text-align: center;
+    letter-spacing: -0.20px;
+    line-height: 13.8px;
+    top: 30px;
+  }
+
+  .text-wrapper-5 {
+    color: #5c0c87;
+    letter-spacing: -0.02px;
+  }
+
+  .span {
+    color: #2d3748;
+    letter-spacing: -0.02px;
+  }
+
+  .first-name {
+    position: relative;
+    width: fit-content;
+    margin-top: -.71px;
+    font-family: SF Pro Display-Regular, Helvetica;
+    font-weight: 400;
+    color: var(--body-text);
+    font-size: 12px;
+    letter-spacing: -.2px;
+    line-height: 13.8px;
+    white-space: nowrap;
+    margin-bottom: 7px;
+  }
+
+  .group {
+    position: relative;
+    width: 100%;
+    height: 33.87px;
+    border-radius: 3.53px;
+    border: 0.71px solid;
+    border-color: var(--strokes);
+    margin-bottom: 7px;
+  }
+
+  .texto-modal-interno {
+    position: relative;
+    width: fit-content;
+    margin-top: -0.65px;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--body-text);
+    font-size: 10px;
+    letter-spacing: -0.20px;
+    line-height: 13.8px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+
+  .text-wrapper-3 {
+    align-self: stretch;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: #5c0c87;
+    font-size: 9.9px;
+    text-align: right;
+    letter-spacing: -0.20px;
+    line-height: 13.8px;
+    top: 5px;
+  }
+
+  .create-account-wrapper {
+    width: 253px;
+    height: 34px;
+    left: 0;
+    background-color: #5c0c87;
+    border-radius: 3.53px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    top: 15px;
+  }
+}
+
 @keyframes bounceIn {
   0% {
     opacity: 0;

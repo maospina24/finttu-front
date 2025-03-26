@@ -35,6 +35,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  viewLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  viewRegistro() {
+    this.router.navigate(['/registro']);
+  }
+
+  home() {
+    this.router.navigate(['/home']);
+  }
+
   validarForm(): void {
     this.loginForm.markAllAsTouched();
     if (this.loginForm.valid) {

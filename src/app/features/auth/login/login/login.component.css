@@ -1,3 +1,238 @@
+@media (min-width: 1400px) {
+  .movil{
+    display: none;
+  }
+
+  .web{
+    display: flex !important;
+  }
+}
+
+
+/* Móviles (320px - 576px) */
+@media (max-width: 1400px) {
+
+  .page-transition {
+    animation: bounceIn 1s ease-in-out;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  .movil{
+    display: block;
+  }
+
+  .web{
+    display: none;
+  }
+
+  .responsive {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .png-sin-fondo-1 {
+    width: 90px;
+    position: relative;
+    height: 39px;
+    object-fit: cover;
+    margin-right: 5px;
+  }
+
+  .login-button {
+    width: 110px;
+    border-radius: var(--br-xs);
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    font-size: 13px;
+  }
+
+  .register-button {
+    width: 110px;
+    border-radius: var(--br-xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-indigo-100);
+    box-sizing: border-box;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    color: var(--color-indigo-100);
+    font-size: 13px;
+  }
+
+  /* hasta aca se configura header */
+
+  .contenedor-login {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 90px; /* Mantiene la posición vertical fija */
+    left: 50%;
+    transform: translateX(-50%); /* Centra solo horizontalmente */
+    padding: 30px;
+}
+
+  .seccion-login-1{
+    margin-top: -.71px;
+    font-family: SF Pro Display-Bold, Helvetica;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: -.4px;
+    line-height: 27.7px;
+  }
+
+  .text-wrapper-2 {
+    position: relative;
+    font-family: "SF Pro Display-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--body-text);
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: -0.20px;
+    line-height: 13.8px;
+    white-space: nowrap;
+    margin-bottom: 40px;
+  }
+
+  .frame-7 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 14px;
+    font-family: "SF Pro Display-Regular", Helvetica;
+  }
+
+  .first-name {
+    position: relative;
+    width: fit-content;
+    margin-top: -.71px;
+    font-family: SF Pro Display-Regular, Helvetica;
+    font-weight: 400;
+    color: var(--body-text);
+    font-size: 12px;
+    letter-spacing: -.2px;
+    line-height: 13.8px;
+    white-space: nowrap;
+  }
+
+.entry-field-2 {
+  margin-bottom: 10px;
+}
+
+.group {
+  position: relative;
+  width: 252.6px;
+  height: 33.87px;
+  border-radius: 3.53px;
+  border: 0.71px solid;
+  border-color: var(--strokes);
+}
+
+.group-password {
+  position: relative;
+  width: 206.6px;
+  height: 33.87px;
+  border-radius: 3.53px;
+  border: 0.71px solid;
+  border-color: var(--strokes);
+}
+
+.text-wrapper-3 {
+  align-self: stretch;
+  font-family: "SF Pro Display-Regular", Helvetica;
+  font-weight: 400;
+  color: #5c0c87;
+  font-size: 9.9px;
+  text-align: center;
+  letter-spacing: -0.20px;
+  line-height: 13.8px;
+  top: 5px;
+  margin-bottom: 10px;
+}
+
+.terms-and-privacy {
+  align-items: center;
+  gap: 8.47px;
+  left: 0;
+  font-family: "SF Pro Display-Regular", Helvetica;
+}
+
+.remember-me {
+  display: inline-flex;
+  align-items: center;
+  gap: 8.47px;
+  top: 0;
+  left: 0;
+  font-family: "SF Pro Display-Regular", Helvetica;
+}
+.frame-8 {
+  position: relative;
+  width: 274.58px;
+  height: 39.51px;
+  font-size: 10px;
+}
+
+.text-wrapper-5 {
+  color: #5c0c87;
+  letter-spacing: -0.02px;
+}
+
+.no-tienes-una-cuenta {
+  font-family: "SF Pro Display-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 9.9px;
+  text-align: center;
+  letter-spacing: -0.20px;
+  line-height: 13.8px;
+  top: 260px;
+  position: absolute;
+}
+
+.span {
+  color: #2d3748;
+  letter-spacing: -0.02px;
+}
+
+.create-account-wrapper {
+  width: 253px;
+  height: 34px;
+  top: 70px;
+  left: 0;
+  background-color: #5c0c87;
+  border-radius: 3.53px;
+}
+
+}
+
 .page-transition {
   animation: bounceIn 1s ease-in-out;
 }
