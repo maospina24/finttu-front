@@ -204,6 +204,22 @@
     position: relative;
     top: 15px;
   }
+
+  .create-account-wrapper-modal {
+    width: 253px;
+    height: 34px;
+    left: 0;
+    background-color: #5c0c87;
+    border-radius: 3.53px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    top: 0px;
+  }
+
+  .texto-modal-movil{
+    font-family: "SF Pro Display-Regular", Helvetica;
+  }
 }
 
 @keyframes bounceIn {
@@ -247,8 +263,28 @@
   transition: all 0.3s ease-in-out;
 }
 
+.otp-input-movil {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid #5c0c87; /* Color del borde */
+  border-radius: 5px;
+  color: #5c0c87; /* Color del texto */
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
 /* Cuando el input esté enfocado */
 .otp-input:focus {
+  border-color: #8a2be2; /* Un tono más brillante al enfocar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(140, 0, 255, 0.5);
+  color: #8a2be2; /* Color del texto al enfocar */
+}
+
+/* Cuando el input esté enfocado */
+.otp-input-movil:focus {
   border-color: #8a2be2; /* Un tono más brillante al enfocar */
   outline: none;
   box-shadow: 0 0 5px rgba(140, 0, 255, 0.5);

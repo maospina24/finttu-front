@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CrudServiceService } from 'src/app/shared/backend/cruds/crud.service';
 import { ToastrService } from 'ngx-toastr';
+import { Modal } from 'bootstrap';
 
 @Component({
   selector: 'app-registro',
@@ -95,6 +96,9 @@ export class RegistroComponent implements OnInit {
           if (genericResponse.code === 201) {
             this.isLoading = false;
             this.modalService.dismissAll();
+            const modalElement = document.getElementById('crear-password');
+            const modalInstance = Modal.getInstance(modalElement) || new Modal(modalElement)
+            modalInstance.hide();
             Swal.fire({
               title: '¡Registro exitoso!',
               text: 'Tu cuenta ha sido creada correctamente, ya puedes iniciar sesión.',
@@ -111,6 +115,9 @@ export class RegistroComponent implements OnInit {
             console.log("genericResponse..." + JSON.stringify(genericResponse));
             this.isLoading = false;
             this.modalService.dismissAll();
+            const modalElement = document.getElementById('crear-password');
+            const modalInstance = Modal.getInstance(modalElement) || new Modal(modalElement)
+            modalInstance.hide();
             Swal.fire({
               title: '¡Error!',
               text: "Ya existe una cuenta creada con este correo " + this.registroForm.get('correo')?.value + ", inicia sesión o recupera tu contraseña.",
@@ -128,6 +135,9 @@ export class RegistroComponent implements OnInit {
           console.log("error..." + JSON.stringify(error));
           this.isLoading = false;
           this.modalService.dismissAll();
+          const modalElement = document.getElementById('crear-password');
+          const modalInstance = Modal.getInstance(modalElement) || new Modal(modalElement)
+          modalInstance.hide();
             Swal.fire({
               title: '¡Error!',
               text: error.error.answer?? "Comunicate con el administrador.",
@@ -145,9 +155,34 @@ export class RegistroComponent implements OnInit {
 
   validarYAbrirModal(content: any): void {
     this.registroForm.markAllAsTouched();
-    this.openModal(content);
     if (this.registroForm.valid) {
       this.openModal(content);
+    } else {
+      console.log('El formulario de registro tiene errores', this.registroForm);
+    }
+  }
+
+  validarYAbrirModalMovil(idModal: string) {
+
+    this.registroForm.markAllAsTouched();
+    if (this.registroForm.valid) {
+      this.registroExitoso = false;
+
+    // Reinicializar el formulario al abrir el modal
+    this.registerForm.reset({
+      password: '',
+      confirmPassword: '',
+      terminos: false,
+      infoExperian: false,
+      tratamientoDatos: false
+    });
+    const modalElement = document.getElementById(idModal);
+    if (modalElement) {
+      const modalInstance = Modal.getInstance(modalElement) || new Modal(modalElement)
+      modalInstance.show();
+    } else {
+      console.error(`No se encontró el modal con ID: ${idModal}`);
+    }
     } else {
       console.log('El formulario de registro tiene errores', this.registroForm);
     }
@@ -239,6 +274,39 @@ export class RegistroComponent implements OnInit {
   focusNext(event: any, index: number) {
     setTimeout(() => {
       const inputs = document.querySelectorAll(".otp-input") as NodeListOf<HTMLInputElement>;
+      let value = event.target.value;
+
+      if (value.length > 1) {
+        value = value.slice(0, 1);
+        event.target.value = value;
+      }
+
+      this.otp[index] = value;
+
+      if (index === 5 && value) {
+        this.validarOTP();
+        return;
+      }
+
+      if (value && index < 5) {
+        inputs[index + 1]?.focus();
+      }
+
+      if (event.inputType === "deleteContentBackward") {
+        this.otp[index] = "";
+        if (index > 0) {
+          setTimeout(() => {
+            inputs[index - 1]?.focus();
+            this.otp[index - 1] = "";
+          }, 50);
+        }
+      }
+    }, 50); // 🔥 Retrasamos un poco la ejecución para asegurarnos de que el DOM está listo.
+  }
+
+  focusNextMovil(event: any, index: number) {
+    setTimeout(() => {
+      const inputs = document.querySelectorAll(".otp-input-movil") as NodeListOf<HTMLInputElement>;
       let value = event.target.value;
 
       if (value.length > 1) {
