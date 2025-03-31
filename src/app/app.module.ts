@@ -20,6 +20,8 @@ import { HeaderInternoComponent } from './shared/header-interno/header-interno.c
 import { DiagnosticoGeneralComponent } from './features/general/diagnostico-general/diagnostico-general.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CurrencyPipe } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { CurrencyPipe } from '@angular/common';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxChartsModule,
-    CurrencyPipe
+    CurrencyPipe,
+    NgxEchartsModule.forRoot({ echarts })
   ],
   providers: [NgbActiveModal, NgbModal, CurrencyPipe],
   bootstrap: [AppComponent]
